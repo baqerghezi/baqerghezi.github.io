@@ -4,12 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mohammad Al Baqer Alghezi - Portfolio</title>
-    <meta name="description" content="Personal portfolio of Mohammad Al Baqer Alghezi, an Optical Engineering PhD student based in Dayton, Ohio, showcasing projects and publications in optics and photonics.">
+    <meta name="description" content="Personal portfolio of Mohammad Al Baqer Alghezi, an Optical Engineering PhD student based in Dayton, Ohio, showcasing projects, publications, and blog posts on optics and photonics.">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
-    <style>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet"> <style>
         /* Apply Inter font globally */
         body {
             font-family: 'Inter', sans-serif;
@@ -49,12 +48,12 @@
         }
         /* Styling for publication entries */
         .publication-entry {
-            margin-bottom: 1.5rem; /* Space between publications */
-            padding-bottom: 1rem; /* Space below each publication */
-            border-bottom: 1px dashed #d2b48c; /* Dashed border between entries */
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px dashed #d2b48c;
         }
         .publication-entry:last-child {
-             border-bottom: none; /* Remove border from the last entry */
+             border-bottom: none;
              margin-bottom: 0;
              padding-bottom: 0;
         }
@@ -65,37 +64,84 @@
         .publication-authors {
             font-style: italic;
             margin-bottom: 0.25rem;
-            color: #8B4513; /* Slightly darker accent for authors */
+            color: #8B4513;
         }
         .publication-venue {
              margin-bottom: 0.5rem;
-             font-size: 0.9rem; /* Slightly smaller text for venue */
+             font-size: 0.9rem;
         }
+        /* Top Navigation Styles */
+        .top-nav {
+            background-color: rgba(255, 250, 240, 0.8); /* Slightly transparent Floral White */
+            backdrop-filter: blur(5px); /* Blur effect for sticky nav */
+            border-bottom: 1px solid #d2b48c; /* Tan border */
+        }
+        .top-nav-link {
+             padding: 0.75rem 1rem; /* py-3 px-4 */
+             font-weight: 700; /* bold */
+             font-size: 0.9rem; /* Slightly smaller */
+             text-transform: uppercase; /* Uppercase */
+             letter-spacing: 0.05em; /* Slight letter spacing */
+             transition: color 0.2s ease-in-out;
+        }
+         .top-nav-link:hover {
+             color: #8B4513; /* Saddle Brown on hover */
+         }
+         /* Logo Style */
+         .logo-text {
+             font-weight: 900; /* Extra bold */
+             font-size: 1.25rem; /* text-xl */
+             letter-spacing: -0.025em; /* Slightly tighter */
+         }
 
     </style>
 </head>
 <body class="bg-old-paper text-dark-ink leading-relaxed">
 
-    <div class="container mx-auto max-w-6xl px-4 py-12 md:py-16">
-        <div class="md:flex md:space-x-8"> <aside class="md:w-1/4 mb-12 md:mb-0 md:sticky md:top-16 md:self-start">
-                <div class="text-center md:text-left">
-                    <img src="photos/personal_photo.png"
-                         alt="Headshot photo of Mohammad Al Baqer Alghezi"
-                         class="w-32 h-32 md:w-36 md:h-36 rounded-full mx-auto md:mx-0 mb-6 border-4 border-soft-brown shadow-md object-cover" onerror="this.onerror=null; this.src='https://placehold.co/144x144/d2b48c/654321?text=Photo+Not+Found'; this.alt='Error loading profile photo';"> <h1 class="text-2xl lg:text-3xl font-bold mb-1">Mohammad Al Baqer Alghezi</h1> <p class="text-base md:text-lg text-dark-ink/80 mb-8">Optical Engineering PhD Student</p> </div>
+    <nav class="top-nav sticky top-0 z-50">
+        <div class="container mx-auto max-w-6xl px-4 flex justify-between items-center">
+            <a href="index.html" class="logo-text text-dark-ink hover:text-accent transition-colors">
+                M. A. Alghezi
+            </a>
+            <div>
+                <a href="index.html" class="top-nav-link text-accent">Home</a>
+                <a href="blog.html" class="top-nav-link text-accent">Blog</a>
+            </div>
+        </div>
+    </nav>
 
-                <nav class="mt-8 border-t border-soft-brown pt-6">
+    <div class="container mx-auto max-w-6xl px-4 pt-8 md:pt-12"> <div class="md:flex md:space-x-8">
+
+            <aside class="md:w-1/4 mb-12 md:mb-0 md:sticky md:top-24 md:self-start"> <div class="text-center md:text-left mb-8"> <img src="photos/personal_photo.png"
+                         alt="Headshot photo of Mohammad Al Baqer Alghezi"
+                         class="w-32 h-32 md:w-36 md:h-36 rounded-full mx-auto md:mx-0 mb-6 border-4 border-soft-brown shadow-md object-cover"
+                         onerror="this.onerror=null; this.src='https://placehold.co/144x144/d2b48c/654321?text=Photo+Not+Found'; this.alt='Error loading profile photo';">
+                    <h1 class="text-2xl lg:text-3xl font-bold mb-1">Mohammad Al Baqer Alghezi</h1>
+                    <p class="text-base md:text-lg text-dark-ink/80">Optical Engineering PhD Student</p>
+                </div>
+
+                <nav class="border-t border-soft-brown pt-6">
                      <h3 class="text-lg font-bold mb-4 text-center md:text-left">Connect</h3>
-                     <a href="mailto:alghezim1@udayton.edu" class="block w-full text-center bg-accent text-white font-bold py-2 px-4 rounded-lg transition hover:bg-accent-dark mb-4 text-sm md:text-base"> Email Me
+                     <a href="mailto:alghezim1@udayton.edu" class="block w-full text-center bg-accent text-white font-bold py-2 px-4 rounded-lg transition hover:bg-accent-dark mb-4 text-sm md:text-base">
+                        Email Me
                      </a>
                      <div class="flex flex-col items-center md:items-start">
                         <a href="https://github.com/baqerghezi" class="sidebar-link text-accent hover:text-accent-dark font-medium hover:underline" target="_blank" rel="noopener noreferrer">
-                            <img src="photos/github.png" alt="GitHub logo icon linking to baqerghezi profile" class="w-5 h-5 mr-2 flex-shrink-0"> <span class="text-sm md:text-base">GitHub</span> </a>
+                            <img src="photos/github.png" alt="GitHub logo icon linking to baqerghezi profile" class="w-5 h-5 mr-2 flex-shrink-0">
+                            <span class="text-sm md:text-base">GitHub</span>
+                        </a>
                         <a href="https://www.linkedin.com/in/baqerghezi/" class="sidebar-link text-accent hover:text-accent-dark font-medium hover:underline" target="_blank" rel="noopener noreferrer">
-                            <img src="photos/Linkedin.png" alt="LinkedIn logo icon linking to baqerghezi profile" class="w-5 h-5 mr-2 flex-shrink-0"> <span class="text-sm md:text-base">LinkedIn</span> </a>
+                            <img src="photos/Linkedin.png" alt="LinkedIn logo icon linking to baqerghezi profile" class="w-5 h-5 mr-2 flex-shrink-0">
+                            <span class="text-sm md:text-base">LinkedIn</span>
+                        </a>
                         <a href="#" class="sidebar-link text-accent hover:text-accent-dark font-medium hover:underline" target="_blank" rel="noopener noreferrer">
-                            <img src="photos/googlescholar.png" alt="Google Scholar logo icon" class="w-5 h-5 mr-2 flex-shrink-0"> <span class="text-sm md:text-base">Google Scholar</span> </a>
+                            <img src="photos/googlescholar.png" alt="Google Scholar logo icon" class="w-5 h-5 mr-2 flex-shrink-0">
+                            <span class="text-sm md:text-base">Google Scholar</span>
+                        </a>
                         <a href="https://www.instagram.com/ghezibaqer/" class="sidebar-link text-accent hover:text-accent-dark font-medium hover:underline" target="_blank" rel="noopener noreferrer">
-                            <img src="photos/instgram.png" alt="Instagram logo icon linking to ghezibaqer profile" class="w-5 h-5 mr-2 flex-shrink-0"> <span class="text-sm md:text-base">Instagram</span> </a>
+                            <img src="photos/instgram.png" alt="Instagram logo icon linking to ghezibaqer profile" class="w-5 h-5 mr-2 flex-shrink-0">
+                            <span class="text-sm md:text-base">Instagram</span>
+                        </a>
                     </div>
                 </nav>
             </aside>
@@ -104,29 +150,31 @@
                 <section id="about" class="mb-12 md:mb-16">
                     <h2 class="text-2xl md:text-3xl font-bold border-b-2 border-soft-brown pb-2 mb-6">About Me</h2>
                     <p class="mb-4">
-                        Welcome to my corner of the web! I'm Mohammad Al Baqer Alghezi, an Optical Engineering PhD student at the University of Dayton. I'm passionate about [Your Passion 1, e.g., optical system design, laser applications]. With a background in [Your Background, e.g., physics or engineering], I enjoy tackling challenges in the field of optics and photonics.
+                        Welcome to my corner of the web! It's great to meet you. I am Mohammad AlBaqer, you can call me Mohammad or Baqer.
+                    </p>
+                    <p class="mb-4">
+                        I'm currently pursuing my Ph.D. in Electro-Optics right here at the University of Dayton. My world revolves around optical physics, signal processing, and digging into data analysis – basically, I love figuring out how light works and what we can do with it! I enjoy the whole research process, from developing algorithms (mostly using Python and MATLAB) to sharing what I find through publications and conference talks.
                     </p>
                     <p>
-                        When I'm not in the lab or studying, you can find me [Your Hobby 1] or [Your Hobby 2]. I believe in continuous learning and always strive to contribute meaningfully to my field.
+                        Right now, I'm excited about finding a challenging role in research and development where I can jump in and contribute to the cool new things happening in optics and photonics.
                     </p>
-                </section>
+                     </section>
 
                 <section id="projects" class="mb-12 md:mb-16">
                     <h2 class="text-2xl md:text-3xl font-bold border-b-2 border-soft-brown pb-2 mb-6">Projects</h2>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                        <div class="border border-soft-brown rounded-lg p-4 transition hover:shadow-md">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6"> <div class="border border-soft-brown rounded-lg p-4 transition hover:shadow-md">
                             <h3 class="text-xl font-bold mb-2">Project Title 1</h3>
-                            <p class="text-dark-ink/90 mb-3">
+                            <p class="text-dark-ink/90 mb-3 text-sm">
                                 A brief description of the project, highlighting key features and technologies used (e.g., Zemax, MATLAB, experimental setup).
                             </p>
-                            <a href="#" class="text-accent hover:text-accent-dark font-medium hover:underline">View Details &rarr;</a>
+                            <a href="post-project-1.html" class="text-accent hover:text-accent-dark font-medium hover:underline text-sm">View Details &rarr;</a>
                         </div>
                         <div class="border border-soft-brown rounded-lg p-4 transition hover:shadow-md">
                             <h3 class="text-xl font-bold mb-2">Project Title 2</h3>
-                            <p class="text-dark-ink/90 mb-3">
+                            <p class="text-dark-ink/90 mb-3 text-sm">
                                 Another project description. Focus on the problem it solves or the skills demonstrated (e.g., simulation, data analysis, specific optical technique).
                             </p>
-                            <a href="#" class="text-accent hover:text-accent-dark font-medium hover:underline">View Details &rarr;</a>
+                             <a href="post-project-2.html" class="text-accent hover:text-accent-dark font-medium hover:underline text-sm">View Details &rarr;</a>
                         </div>
                         </div>
                 </section>
@@ -137,13 +185,15 @@
                         <p class="publication-title">Title of Your Awesome Optical Engineering Paper</p>
                         <p class="publication-authors">Alghezi, M. A. B.; Coauthor, A. N.; Advisor, Y.</p>
                         <p class="publication-venue">Journal of Optics / Conference Proceedings Name, Vol. XX, Issue YY, pp. ZZZ-ZZZ (Year)</p>
-                        <a href="#" class="text-accent hover:text-accent-dark font-medium hover:underline" target="_blank" rel="noopener noreferrer">View Publication &rarr;</a> </div>
+                        <a href="#" class="text-accent hover:text-accent-dark font-medium hover:underline text-sm" target="_blank" rel="noopener noreferrer">View Publication &rarr;</a>
+                    </div>
                     <div class="publication-entry">
                         <p class="publication-title">Another Significant Contribution to Optics</p>
                         <p class="publication-authors">Alghezi, M. A. B.; Collaborator, B. C.</p>
                         <p class="publication-venue">Optics Express / SPIE Proceedings, Vol. XXXX, Paper FGFGFG (Year)</p>
-                        <a href="#" class="text-accent hover:text-accent-dark font-medium hover:underline" target="_blank" rel="noopener noreferrer">View Publication &rarr;</a> </div>
-                    </section>
+                        <a href="#" class="text-accent hover:text-accent-dark font-medium hover:underline text-sm" target="_blank" rel="noopener noreferrer">View Publication &rarr;</a>
+                    </div>
+                </section>
 
                  <section id="contact" class="mb-12 md:mb-16">
                     <h2 class="text-2xl md:text-3xl font-bold border-b-2 border-soft-brown pb-2 mb-6">Get In Touch</h2>
@@ -157,8 +207,5 @@
                 </footer>
             </main>
 
-        </div>
-    </div>
-
-</body>
+        </div> </div> </body>
 </html>
