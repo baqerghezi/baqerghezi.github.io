@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog | Optics & Photonics Insights - Mohammad Al Baqer Alghezi</title>
+    <meta name="description" content="Explore blog posts by Mohammad Al Baqer Alghezi covering topics in optical engineering, photonics, PhD research, data analysis (Python/MATLAB), and technology trends.">
+    <meta name="keywords" content="optics blog, photonics, electro-optics, optical engineering, PhD student, research, MATLAB, Python, data analysis, University of Dayton, Mohammad Al Baqer Alghezi">
+    <link rel="canonical" href="https://your-domain.com/blog.html"> <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        /* Apply Inter font globally */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Custom background color - slightly brighter paper */
+        .bg-old-paper {
+            background-color: #fffaf0; /* Floral White */
+        }
+        /* Custom text color for contrast */
+        .text-dark-ink {
+            color: #654321; /* Dark Brown */
+        }
+         /* Custom border color */
+        .border-soft-brown {
+             border-color: #d2b48c; /* Tan */
+        }
+        /* Custom accent color for links/buttons */
+        .text-accent {
+            color: #a0522d; /* Sienna */
+        }
+        .hover\:text-accent-dark:hover { /* Combined selector for specificity */
+             color: #8B4513; /* Saddle Brown */
+        }
+        .bg-accent {
+             background-color: #a0522d; /* Sienna */
+        }
+         .hover\:bg-accent-dark:hover { /* Combined selector for specificity */
+             background-color: #8B4513; /* Saddle Brown */
+        }
+        /* Style for icon links in the sidebar */
+        .sidebar-link {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.75rem;
+            text-decoration: none;
+            width: 100%;
+        }
+        /* Styling for blog post entries */
+        .blog-post-entry {
+            margin-bottom: 2.5rem; /* Increased spacing */
+            padding-bottom: 1.5rem;
+            border-bottom: 1px dashed #d2b48c;
+        }
+        .blog-post-entry:last-child {
+             /* Keep last entry border for pagination consistency */
+        }
+        .blog-post-title {
+            font-weight: bold;
+            font-size: 1.5rem; /* Larger title */
+            margin-bottom: 0.5rem;
+        }
+        .blog-post-meta {
+            font-size: 0.85rem;
+            color: #8B4513; /* Saddle Brown for meta */
+            margin-bottom: 0.75rem;
+        }
+        .blog-post-snippet {
+            margin-bottom: 1rem;
+        }
+        /* Top Navigation Styles */
+        .top-nav {
+            background-color: rgba(255, 250, 240, 0.8); /* Slightly transparent Floral White */
+            backdrop-filter: blur(5px); /* Blur effect for sticky nav */
+            border-bottom: 1px solid #d2b48c; /* Tan border */
+        }
+        .top-nav-link {
+             padding: 0.75rem 1rem; /* py-3 px-4 */
+             font-weight: 700; /* bold */
+             font-size: 0.9rem; /* Slightly smaller */
+             text-transform: uppercase; /* Uppercase */
+             letter-spacing: 0.05em; /* Slight letter spacing */
+             transition: color 0.2s ease-in-out;
+             color: #a0522d; /* Default accent color */
+        }
+         .top-nav-link.active {
+             color: #654321; /* Dark Ink for active link */
+             border-bottom: 2px solid #654321;
+             padding-bottom: calc(0.75rem - 2px); /* Adjust padding to account for border */
+         }
+         .top-nav-link:not(.active):hover {
+             color: #8B4513; /* Saddle Brown on hover for non-active */
+         }
+         /* Logo Style */
+         .logo-text {
+             font-weight: 900; /* Extra bold */
+             font-size: 1.25rem; /* text-xl */
+             letter-spacing: -0.025em; /* Slightly tighter */
+         }
+         /* Pagination Styles */
+        .pagination-controls {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 2rem; /* mt-8 */
+            padding-top: 1rem; /* pt-4 */
+            border-top: 1px solid #d2b48c; /* Tan border */
+            flex-wrap: wrap; /* Allow wrapping on small screens */
+        }
+        .pagination-link, .pagination-ellipsis {
+            margin: 0.25rem 0.25rem; /* mx-1 my-1 */
+            padding: 0.5rem 0.75rem; /* py-2 px-3 */
+            border: 1px solid transparent; /* Default transparent border */
+            border-radius: 0.375rem; /* rounded-md */
+            color: #a0522d; /* Sienna */
+            text-decoration: none;
+            transition: background-color 0.2s, border-color 0.2s, color 0.2s;
+            font-size: 0.9rem;
+            cursor: pointer; /* Indicate clickable */
+            user-select: none; /* Prevent text selection */
+        }
+        .pagination-link:hover {
+            background-color: rgba(210, 180, 140, 0.2); /* Light tan hover */
+            border-color: #d2b48c; /* Tan border on hover */
+            color: #8B4513; /* Saddle Brown */
+        }
+        .pagination-link.active {
+            background-color: #a0522d; /* Sienna */
+            border-color: #a0522d; /* Sienna */
+            color: #fffaf0; /* Floral White */
+            font-weight: bold;
+            cursor: default;
+        }
+        .pagination-link.disabled {
+            color: #d2b48c; /* Tan (disabled look) */
+            cursor: not-allowed;
+            pointer-events: none; /* Prevent clicks */
+        }
+        .pagination-link.disabled:hover {
+            background-color: transparent;
+            border-color: transparent;
+        }
+        .pagination-ellipsis {
+            cursor: default;
+            padding: 0.5rem 0.25rem; /* Adjust padding */
+        }
+
+    </style>
+</head>
+<body class="bg-old-paper text-dark-ink leading-relaxed">
+
+    <nav class="top-nav sticky top-0 z-50">
+        <div class="container mx-auto max-w-6xl px-4 flex justify-between items-center">
+            <a href="index.html" class="logo-text text-dark-ink hover:text-accent transition-colors">
+                M. A. Alghezi
+            </a>
+            <div>
+                <a href="index.html" class="top-nav-link">Home</a>
+                <a href="blog.html" class="top-nav-link active">Blog</a> </div>
+        </div>
+    </nav>
+
+    <div class="container mx-auto max-w-6xl px-4 pt-8 md:pt-12">
+        <div class="md:flex md:space-x-6">
+
+            <aside class="md:w-[18%] mb-12 md:mb-0 md:sticky md:top-20 md:self-start">
+                <div class="text-center md:text-left mb-8">
+                    <img src="photos/personal_photo.png"
+                         alt="Headshot photo of Mohammad Al Baqer Alghezi"
+                         class="w-28 h-28 md:w-28 md:h-28 rounded-full mx-auto md:mx-0 mb-6 border-4 border-soft-brown shadow-md object-cover"
+                         onerror="this.onerror=null; this.src='https://placehold.co/112x112/d2b48c/654321?text=Photo+Not+Found'; this.alt='Error loading profile photo';">
+                    <h1 class="text-xl lg:text-2xl font-bold mb-1">Mohammad Al Baqer Alghezi</h1>
+                    <p class="text-sm md:text-base text-dark-ink/80">Optical Engineering PhD Student</p>
+                </div>
+
+                <nav class="border-t border-soft-brown pt-6">
+                    <h3 class="text-md font-bold mb-4 text-center md:text-left">Connect</h3>
+                    <a href="mailto:alghezim1@udayton.edu" class="block w-full text-center bg-accent text-white font-bold py-2 px-3 rounded-lg transition hover:bg-accent-dark mb-4 text-xs md:text-sm">
+                        Email Me
+                    </a>
+                    <div class="flex flex-col items-center md:items-start">
+                        <a href="https://github.com/baqerghezi" class="sidebar-link text-accent hover:text-accent-dark font-medium hover:underline" target="_blank" rel="noopener noreferrer">
+                            <img src="photos/github.png" alt="GitHub profile of Mohammad Al Baqer Alghezi" class="w-4 h-4 mr-2 flex-shrink-0" onerror="this.style.display='none'">
+                            <span class="text-xs md:text-sm">GitHub</span>
+                        </a>
+                        <a href="https://www.linkedin.com/in/baqerghezi/" class="sidebar-link text-accent hover:text-accent-dark font-medium hover:underline" target="_blank" rel="noopener noreferrer">
+                            <img src="photos/Linkedin.png" alt="LinkedIn profile of Mohammad Al Baqer Alghezi" class="w-4 h-4 mr-2 flex-shrink-0" onerror="this.style.display='none'">
+                            <span class="text-xs md:text-sm">LinkedIn</span>
+                        </a>
+                        <a href="#" class="sidebar-link text-accent hover:text-accent-dark font-medium hover:underline" target="_blank" rel="noopener noreferrer">
+                            <img src="photos/googlescholar.png" alt="Google Scholar profile of Mohammad Al Baqer Alghezi" class="w-4 h-4 mr-2 flex-shrink-0" onerror="this.style.display='none'">
+                            <span class="text-xs md:text-sm">Google Scholar</span>
+                        </a>
+                        <a href="https://www.instagram.com/ghezibaqer/" class="sidebar-link text-accent hover:text-accent-dark font-medium hover:underline" target="_blank" rel="noopener noreferrer">
+                            <img src="photos/instgram.png" alt="Instagram profile of Mohammad Al Baqer Alghezi" class="w-4 h-4 mr-2 flex-shrink-0" onerror="this.style.display='none'">
+                            <span class="text-xs md:text-sm">Instagram</span>
+                        </a>
+                    </div>
+                </nav>
+            </aside>
+
+            <main class="md:w-[82%]">
+                <h1 class="text-3xl md:text-4xl font-bold border-b-2 border-soft-brown pb-3 mb-8">Optics & Research Blog</h1>
+
+                <div id="blog-posts-container" class="min-h-[300px]"> </div>
+
+                <nav id="pagination-container" aria-label="Blog post pagination">
+                    </nav>
+
+                <footer class="text-center mt-16 pt-8 border-t border-soft-brown">
+                    <p class="text-sm text-dark-ink/70">&copy; 2025 Mohammad Al Baqer Alghezi. All rights reserved.</p>
+                </footer>
+            </main>
+
+        </div> </div> <script>
+        // --- Blog Post Data ---
+        const blogPosts = [
+             // Posts are displayed newest first (based on order here).
+            { title: "Junk Post 18", date: "2025-05-18", snippet: "This is the snippet for junk post 18...", filename: "post-18.html" },
+            { title: "Junk Post 17", date: "2025-05-17", snippet: "This is the snippet for junk post 17...", filename: "post-17.html" },
+            { title: "Junk Post 16", date: "2025-05-16", snippet: "This is the snippet for junk post 16...", filename: "post-16.html" },
+            { title: "Junk Post 15", date: "2025-05-15", snippet: "This is the snippet for junk post 15...", filename: "post-15.html" },
+            { title: "Junk Post 14", date: "2025-05-14", snippet: "This is the snippet for junk post 14...", filename: "post-14.html" },
+            { title: "Junk Post 13", date: "2025-05-13", snippet: "This is the snippet for junk post 13...", filename: "post-13.html" },
+            { title: "Junk Post 12", date: "2025-05-12", snippet: "This is the snippet for junk post 12...", filename: "post-12.html" },
+            { title: "Junk Post 11", date: "2025-05-11", snippet: "This is the snippet for junk post 11...", filename: "post-11.html" },
+            { title: "Junk Post 10", date: "2025-05-10", snippet: "This is the snippet for junk post 10...", filename: "post-10.html" },
+            { title: "Junk Post 9", date: "2025-05-09", snippet: "This is the snippet for junk post 9...", filename: "post-9.html" },
+            { title: "Junk Post 8", date: "2025-05-08", snippet: "This is the snippet for junk post 8...", filename: "post-8.html" },
+            { title: "Junk Post 7", date: "2025-05-07", snippet: "This is the snippet for junk post 7...", filename: "post-7.html" },
+            { title: "Junk Post 6", date: "2025-05-06", snippet: "This is the snippet for junk post 6...", filename: "post-6.html" },
+            { title: "Junk Post 5", date: "2025-05-05", snippet: "This is the snippet for junk post 5...", filename: "post-5.html" },
+            {
+                title: "Understanding Fourier Optics: A Practical Introduction",
+                date: "2025-05-04", // SEO: Use YYYY-MM-DD format for dates
+                snippet: "Fourier optics is a cornerstone of optical engineering, providing a powerful framework for analyzing how light propagates and interacts with optical systems. In this post, we'll break down the fundamental concepts and explore some practical applications using Python simulations...",
+                filename: "post-1.html"
+            },
+            {
+                title: "Tips for Effective Data Visualization in MATLAB",
+                date: "2025-04-20",
+                snippet: "Presenting research data clearly is crucial. While MATLAB offers extensive plotting capabilities, creating truly effective visualizations requires thoughtful design. Here are some tips and tricks I've learned for making your MATLAB plots more informative and visually appealing...",
+                filename: "post-2.html"
+            },
+            {
+                title: "Navigating PhD Life: Balancing Research and Well-being",
+                date: "2025-04-05",
+                snippet: "Embarking on a PhD journey is exciting but demanding. Finding a sustainable balance between intensive research work and personal well-being is key to success and avoiding burnout. This post shares some personal reflections and strategies...",
+                filename: "post-3.html"
+            },
+             { title: "Junk Post 4", date: "2025-04-01", snippet: "This is the snippet for junk post 4...", filename: "post-4.html" },
+        ];
+
+        // --- Pagination Settings ---
+        const postsPerPage = 5;
+        let currentPage = 1;
+
+        // --- DOM Elements ---
+        const postsContainer = document.getElementById('blog-posts-container');
+        const paginationContainer = document.getElementById('pagination-container');
+        const structuredDataScriptId = 'blog-structured-data'; // ID for the script tag
+
+        // --- Function to Generate Single Blog Post HTML ---
+        function generateBlogPostHTML(post) {
+            // SEO: Use heading level 2 for post titles within the main blog listing
+            return `
+                <article class="blog-post-entry">
+                    <h2 class="blog-post-title">
+                        <a href="${post.filename}" class="text-dark-ink hover:text-accent transition-colors">${post.title}</a>
+                    </h2>
+                    <p class="blog-post-meta">Published on <time datetime="${post.date}">${new Date(post.date + 'T00:00:00').toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</time></p>
+                    <div class="blog-post-snippet text-dark-ink/90">
+                        <p>${post.snippet}</p>
+                    </div>
+                    <a href="${post.filename}" class="text-accent hover:text-accent-dark font-medium hover:underline text-sm" aria-label="Read more about ${post.title}">Read More &rarr;</a>
+                </article>
+            `;
+        }
+
+        // --- SEO: Function to Update Structured Data ---
+        function updateStructuredData(postsToShow) {
+            // Remove existing structured data script if it exists
+            const existingScript = document.getElementById(structuredDataScriptId);
+            if (existingScript) {
+                existingScript.remove();
+            }
+
+            // Create the new script tag
+            const script = document.createElement('script');
+            script.id = structuredDataScriptId;
+            script.type = 'application/ld+json';
+
+            // Define the main Blog schema
+            const blogSchema = {
+                "@context": "https://schema.org",
+                "@type": "Blog",
+                "name": "Optics & Research Blog - Mohammad Al Baqer Alghezi",
+                "description": document.querySelector('meta[name="description"]').content,
+                "url": document.querySelector('link[rel="canonical"]').href, // Use canonical URL
+                 "publisher": { // Information about the site owner/publisher
+                    "@type": "Person", // Or Organization if applicable
+                    "name": "Mohammad Al Baqer Alghezi"
+                    // "url": "https://your-domain.com/index.html" // Link to main profile/about page if available
+                 },
+                "blogPost": [] // Array to hold individual blog post schemas
+            };
+
+            // Add schema for each post currently displayed
+            postsToShow.forEach(post => {
+                blogSchema.blogPost.push({
+                    "@type": "BlogPosting",
+                    "headline": post.title,
+                    "url": new URL(post.filename, window.location.href).href, // Create absolute URL
+                    "datePublished": post.date,
+                    // "dateModified": post.date, // Add if you track modification dates
+                    "author": {
+                        "@type": "Person",
+                        "name": "Mohammad Al Baqer Alghezi"
+                    },
+                    "description": post.snippet, // Use snippet as description
+                    "mainEntityOfPage": { // Indicate this is the main topic of the linked page
+                       "@type": "WebPage",
+                       "@id": new URL(post.filename, window.location.href).href
+                     }
+                    // "image": "URL_to_representative_image_for_post.jpg" // Optional: Add image if available per post
+                });
+            });
+
+            script.textContent = JSON.stringify(blogSchema, null, 2); // Pretty print JSON
+            document.head.appendChild(script); // Add the script to the <head>
+        }
+
+
+        // --- Function to Display Posts for a Specific Page ---
+        function displayPosts(page) {
+            if (!postsContainer) return;
+
+            currentPage = page;
+            postsContainer.innerHTML = '';
+
+            const startIndex = (page - 1) * postsPerPage;
+            const endIndex = startIndex + postsPerPage;
+            const paginatedPosts = blogPosts.slice(startIndex, endIndex);
+
+            paginatedPosts.forEach(post => {
+                postsContainer.innerHTML += generateBlogPostHTML(post);
+            });
+
+            // SEO: Update structured data for the currently displayed posts
+            updateStructuredData(paginatedPosts);
+
+            setupPagination();
+        }
+
+        // --- Function to Setup Pagination Controls ---
+        function setupPagination() {
+            if (!paginationContainer) return;
+
+            paginationContainer.innerHTML = ''; // Clear previous controls
+            const pageCount = Math.ceil(blogPosts.length / postsPerPage);
+
+            if (pageCount <= 1) return;
+
+            // --- Previous Button ---
+            const prevLink = document.createElement('a');
+            prevLink.href = '#';
+            prevLink.innerHTML = '&laquo; Prev';
+            prevLink.classList.add('pagination-link');
+            prevLink.setAttribute('aria-label', 'Go to previous page'); // Accessibility
+            if (currentPage === 1) {
+                prevLink.classList.add('disabled');
+                prevLink.setAttribute('aria-disabled', 'true');
+            } else {
+                prevLink.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    displayPosts(currentPage - 1);
+                });
+            }
+            paginationContainer.appendChild(prevLink);
+
+            // --- Page Number Links (with Ellipsis logic) ---
+            const maxVisiblePages = 5;
+            let startPage, endPage;
+
+            // Helper function to add a page number link
+            function addPageLink(pageNumber) {
+                const link = document.createElement('a');
+                link.href = '#';
+                link.textContent = pageNumber;
+                link.classList.add('pagination-link');
+                 link.setAttribute('aria-label', `Go to page ${pageNumber}`); // Accessibility
+                if (pageNumber === currentPage) {
+                    link.classList.add('active');
+                    link.setAttribute('aria-current', 'page'); // Accessibility
+                } else {
+                    link.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        displayPosts(pageNumber);
+                    });
+                }
+                paginationContainer.appendChild(link);
+            }
+
+             // Helper function to add ellipsis
+             function addEllipsis() {
+                 const ellipsis = document.createElement('span');
+                 ellipsis.innerHTML = '&hellip;'; // Use HTML entity
+                 ellipsis.classList.add('pagination-ellipsis');
+                 ellipsis.setAttribute('aria-hidden', 'true'); // Hide from screen readers
+                 paginationContainer.appendChild(ellipsis);
+             }
+
+            if (pageCount <= maxVisiblePages) {
+                // Show all pages
+                for (let i = 1; i <= pageCount; i++) addPageLink(i);
+            } else {
+                 // Logic to show pages with ellipsis
+                 const maxPagesBeforeCurrent = Math.floor((maxVisiblePages - 3) / 2); // -3 for first, last, ellipsis
+                 const maxPagesAfterCurrent = Math.ceil((maxVisiblePages - 3) / 2);
+
+                // Always show first page
+                addPageLink(1);
+
+                // Ellipsis after first page?
+                if (currentPage > maxPagesBeforeCurrent + 2) {
+                    addEllipsis();
+                }
+
+                // Determine middle page numbers
+                let middleStart = Math.max(2, currentPage - maxPagesBeforeCurrent);
+                let middleEnd = Math.min(pageCount - 1, currentPage + maxPagesAfterCurrent);
+
+                if (currentPage <= maxPagesBeforeCurrent + 1) {
+                     middleEnd = Math.max(middleEnd, maxVisiblePages - 2);
+                 }
+                 if (currentPage >= pageCount - maxPagesAfterCurrent) {
+                     middleStart = Math.min(middleStart, pageCount - (maxVisiblePages - 3));
+                 }
+
+                for (let i = middleStart; i <= middleEnd; i++) {
+                    addPageLink(i);
+                }
+
+                // Ellipsis before last page?
+                if (currentPage < pageCount - maxPagesAfterCurrent -1) {
+                     addEllipsis();
+                 }
+
+                // Always show last page
+                addPageLink(pageCount);
+            }
+
+
+            // --- Next Button ---
+            const nextLink = document.createElement('a');
+            nextLink.href = '#';
+            nextLink.innerHTML = 'Next &raquo;';
+            nextLink.classList.add('pagination-link');
+            nextLink.setAttribute('aria-label', 'Go to next page'); // Accessibility
+            if (currentPage === pageCount) {
+                nextLink.classList.add('disabled');
+                 nextLink.setAttribute('aria-disabled', 'true');
+            } else {
+                nextLink.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    displayPosts(currentPage + 1);
+                });
+            }
+            paginationContainer.appendChild(nextLink);
+        }
+
+
+        // --- Initial Load ---
+        document.addEventListener('DOMContentLoaded', () => {
+            if (postsContainer && paginationContainer) {
+                displayPosts(1); // Display the first page initially
+            } else {
+                console.error("Blog post container or pagination container not found!");
+            }
+        });
+    </script>
+
+</body>
+</html>
