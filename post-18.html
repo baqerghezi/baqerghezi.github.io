@@ -212,34 +212,215 @@
   </script>
 
   <script id="post-markdown" type="text/markdown">
-## The Quadratic Equation (Example Post Body)
+1 - 
+The object field modeled as a phase modulated by the vibration in phase $\delta(x,y,t)$  as follows:
 
-This is an example of a blog post body written in Markdown that includes LaTeX equations.
-The main title, author, and date for this post should be set in the HTML elements above.
-
-The general form of a quadratic equation is:
 $$
-ax^2 + bx + c = 0
+E_o (x,y,t) = |E_o| e^{-j(\omega t + \phi(x,y))}.e^{-j \delta(x,y,t)}
 $$
 
-Where $a$, $b$, and $c$ are coefficients, and $a \neq 0$.
-
-The solutions for $x$ can be found using the quadratic formula:
+Where $\omega$ is the temporal frequency and $\delta$  is the vibration term defined as follows:
 $$
-x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
+\delta(x,y) = k_0a(x,y) \cos(\omega_0 t)
+$$
+$\omega_0$ is the frequency of the vibration. 
+
+The term $e^{-j\delta(x,y,t)} = e^{-jk_0a(x,y) \cos(\omega_0 t)}$  can be written as a decomposition of orthogonal functions $J_n(x,y,t)$  where $J_n$ is Bessel function of order $n$  as follows:
+
+$$
+ e^{-ja(x,y) \cos(\omega_0 t)} = \sum_{k=-\infty}^{\infty} j^n J_n(k_0 a(x,y))\cos(n\omega_0 t)
+$$
+Therefor the object beam can be written as:
+$$
+E_o (x,y,t) = |E_o| e^{-j(\omega t + \phi(x,y))}.\sum_{k=-\infty}^{\infty} j^n J_n(k_0 a(x,y)))\cos(n\omega_0 t)
 $$
 
-This formula is derived by completing the square. Let's consider an inline example: the discriminant is $\Delta = b^2 - 4ac$.
+Now the reference beam is written as follows:
 
-### Further Explanation
+$$
+E_r(x,y,t) = |E_r|e^{-j((\omega + n\omega_0)t)}
+$$
 
-The term $b^2 - 4ac$ is known as the discriminant.
-- If $\Delta > 0$, there are two distinct real roots.
-- If $\Delta = 0$, there is exactly one real root (a repeated root).
-- If $\Delta < 0$, there are two distinct complex conjugate roots.
+Now the interference term  is written as follows:
+$$
+I = |E_o + E_r|^2 = (E_o + E_r)(E_o + E_r)^* = |E_o|^2 + |E_r|^2 + E_oE_r^* + E_o^*E_r 
+$$
 
-This demonstrates how MathJax renders LaTeX embedded within Markdown content.
-Your Markdown should start with H2 or regular paragraph text.
+$$
+I = DC + |E_r||E_o|( e^{-j(\omega t + \phi(x,y))}.\sum_{k=-\infty}^{\infty} j^k J_k(k_0 a(x,y))cos(k\omega_0 t)  . e^{j((\omega  n\omega_0)t)} \ +  
+$$
+
+$$
+ + e^{j(\omega t + \phi(x,y))}.\sum_{k=-\infty}^{\infty} (-j)^k J_k(k_0 a(x,y)))\cos(k\omega_0 t)  . e^{-j((\omega + n\omega_0)t)})
+$$
+The time average for D.C. term is the same for the corss terms it is as follows:
+
+$$
+<E_oE_r^*> = <E_o^*E_r
+> = 1/2Re(E_oE_r)$$
+$$
+Re(E_oE_r) =|E_r||E_o| Re(e^{j(\omega t + \phi(x,y))}.\sum_{k=-\infty}^{\infty} (j)^k J_k(k_0 a(x,y)))\cos(k\omega_0 t)  . e^{-j((\omega + n\omega_0)t)})
+$$
+Since we are taking the real value we can write $cos$ as exp function to make the computation easier and the term the term $e^{j\omega t}$  will cancel out:
+$$
+= Re(|E_r||E_o| e^{j\phi(x,y))}.\sum_{k=-\infty}^{\infty} (j)^{k} J_{k}(k_0 a(x,y)))e^{jk\omega_0 t}  . e^{-j((n\omega_0)t)})
+$$
+$$
+= Re(|E_r||E_o| e^{j\phi(x,y))}.\sum_{k=-\infty}^{\infty} (j)^{k} J_{k}(k_0 a(x,y))) . e^{-j(((n - k)\omega_0)t)})
+$$
+Now let's take only the terms where $j^k$  is real that is where $k=2l$ $l \in Z$
+
+$$
+Re(|E_r||E_o| e^{j\phi(x,y))}.\sum_{k=-\infty}^{\infty}  J_{k}(k_0 a(x,y))) . e^{-j(((n-k)\omega_0)t + k\pi/2)})
+$$
+The only the term where k=n will result in real values there is $-sin(B)$ for $sin(B)$. The $sin$ function is taken for real values because of the phase shift caused by $j^k$. 
+Hence the time-averaged n-th order observed field is:
+
+$$
+<D.C. + E_oE_r^* +E_o^*E_r>=D.C. + 2(1/2|E_r||E_o| \cos{(\phi(x,y))} .J_{n}(k_0 a(x,y))) ) =
+$$
+$$
+ D.C. + |E_r||E_o| \cos{(\phi(x,y))} .J_{n}(k_0 a(x,y))) ) 
+$$
+The intensity of the field observed by the CCD camera (assuming $\phi(x,y) = constant$ ) is:
+
+$$
+I_n \propto  J^2_{n}(k_0 a(x,y)))
+$$
+
+------
+
+2 . 
+
+The tranciperancy in wet devolved film is given by:
+
+$$
+t(x,y) = t_0 - \beta I_1 
+$$
+For interference pattern:
+
+$$
+I_1 = |R_o|^2 +|O|^2 + R_oO^* + R_o^*O \approx |R_o|^2  + R_oO^* + R_o^*O
+$$
+The reference beam has the highest intensity ($|R|^2 >> |O|^2$). 
+
+$$
+t(x,y) = t_0 - \beta(|R_o|^2 + R_oO^* + R_o^*O )
+$$
+
+Assuming the new object with the deformation is defined
+
+$$
+O' = Oe^{-j\phi(x,y)}
+$$
+where $\phi (x,y) \propto \delta (x,y)$ 
+
+$$
+U = (Oe^{-j\phi} + R_o)t(x,y)
+$$
+$$
+U \approx ((Oe^{-j\phi} + R_o))(t_0 - \beta R_o^2 -\beta(R_oO^* + R_o^*O ))
+$$
+$$
+U \approx R_o(t_o - \beta R_o^2) + (t_0-\beta R_o^2)Oe^{-j\phi} - \beta R^2 O
+$$
+Neglect the term $O.Oe^{-j\phi}$ because it is slower varying with respect to the other interference terms (i.e, $(t_0-\beta R_o^2)Oe^{-j\phi} - \beta R^2 O$ ). The term related to the fringes is: 
+$$
+U_{var} = (t_0-\beta R_o^2)Oe^{-j\phi} - \beta R^2 O = O((t_0-\beta R_o^2)e^{-j\phi} - \beta R^2 )
+$$
+$$
+I_{var} = I_{obj} ((t_0 - \beta R_o^2)^2 -\beta R_0^2(t_0 - \beta R_o^2)e^{-j\phi} -\beta R_0^2(t_0 - \beta R_o^2)e^{j\phi} + \beta^2 R_o^2)
+$$
+where $OO^* = I_{obj}$  
+$$
+I_{var} = I_{obj}((t_0 - \beta R_0^2)^2 - 2\beta R_0^2 (t_o - \beta R_0^2)cos(\phi) + \beta^2R^2))
+$$
+factor out $(\beta R_o^2)^2$ 
+$$
+I_{var} = I_{obj} ((\beta R_o^2)^2) (\frac{(t_0 - \beta R_0^2)^2}{(\beta R_o^2)^2} - 2 \frac{(t_0 - \beta R_0^2)}{(\beta R_o^2)} \cos(\phi) +1)
+$$
+put $I_0 = I_{obj} ((\beta R_o^2)^2)$
+$$
+I_{var} = I_{0} (\frac{(t_0 - \beta R_0^2)^2}{(\beta R_o^2)^2} - 2 \frac{(t_0 - \beta R_0^2)}{(\beta R_o^2)} \cos(\delta) +1)
+$$
+The term related to the interference variation is written in the form above. 
+Because $\phi \propto \delta$  we wrote the previous term in term of $\delta$ .
+
+The contrast has to do with the difference between the peak and the valise of the fringes it is defined as follows:
+
+$$
+C = \frac{I_{max} - I_{min}}{I_{max} + I_{min}}
+$$
+because the term $I_{var}$ has cosine function with negative value that means the peak $I_{max}$ where the cosine term at its minimum where $cos \delta = -1$  on the other hand the vallie $I_{min}$ where $cos \delta = 1$, 
+Therefore the constrast will be:
+
+$$
+C = \frac{I_0(A^2 + 2A + 1 - A^2 +2A-1)}{I_0(A^2 + 2A + 1 + A^2 -2A+1)} = \frac{(  4A )}{(2A^2 + 2)} = \frac{2A}{1 + A^2}
+$$
+Where $A =  \frac{(t_0 - \beta R_0^2)}{(\beta R_o^2)}$  
+
+$$
+C = \frac{2t_0 \beta R_0^2 - \beta^2 R_0^4}{\beta R_0^2 + (t_0 - \beta R_0^2)^2}
+$$
+Where $R_0 \to \infty$  , $C = -1$.   Where $R_0 \to 0$  C=0.  Somewhere in the middle where we maximize the function:
+
+$$f(R_0)  =  \frac{2t_0 \beta R_0^2 - \beta^2 R_0^4}{\beta R_0^2 + (t_0 - \beta R_0^2)^2}$$
+$$
+ \to f'(R_0) = \frac{(4t_0 \beta R_0 - 4\beta^2 R_0^3)((t_0 - \beta R_0^2)^2) - 2t_0 \beta R_0^2 (\beta 2R_0 + 4\beta R_0(t_0-\beta R_0^2))}{(\beta R_0^2 + (t_0 - \beta R_0^2)^2)^2}
+$$
+After finding the derivative of $f$  that will result third degree equation a symbolic calculator is used to solve it: 
+
+$$
+R_{max} = \frac{\sqrt{t_0^{3/2} \sqrt{t_0 + 2} - t_0^2}}{\sqrt{\beta}} 
+$$
+
+At this reference magnitude the maximum contrast can be found. 
+
+
+Using the second derivative test one can find $f''(R_{max}) <0$  which verify it is maximum point.
+
+![[Pasted image 20250423011605.png]]
+
+The conclusion of that that is, the higher the reference will result in better contrast (negative contrast) if it is close to 0 then will get a poor contrast. At some point in the middle there is a maximum point where the positive contrast at its highest. 
+
+
+----
+
+3-
+George paper explains the two-wavelength interferometry (TWH). The advantage of the two-wavelength interferometry that it can be good for  wider range less sensitive setup on the other hand single wavelenth setup works better for less range more sensitive. 
+
+Giving in the interferometer a fringe pattern in (TWH) equivalent to the one obtained if the equivalent wavelength $\Lambda = \frac{\lambda_1\lambda_2}{|\lambda_1 - \lambda_2|}$  
+
+The interferogram recording and reconstruction process introduced in this paper can be surmised as follows:
+
+1 - The object is illuminated with two wavelengths $\lambda_1$ $\lambda_2$ ($O(\lambda_1)O(\lambda_2)$) 
+2 - then the two fields coming from the object is interfered with a reference beams from the two different wavelength ($R(\lambda_1)R(\lambda_2)$)
+3 - the object field and the reference field for the same wavelength will interfere. The two interference patterns will recorded at holographic plate results in a new interference pattern related to the synthetic (equivalent wavelength). As follows:
+
+$$
+\begin{align*}
+t_H \approx I_1 + I_2 = 4 + \exp[-j(W/\lambda_1 - x \sin \theta_1/\lambda_1)] + \exp[-j(-W/\lambda_1 + x \sin \theta_1/\lambda_1)] \\+  \exp[-j(W/\lambda_2 - x \sin \theta_2/\lambda_2)] + \exp[-j(-W/\lambda_2 + x \sin \theta_2/\lambda_2)].
+\end{align*}
+$$
+Where $W$ is the spatial phase pattern.  
+
+The interferogram  reconstruction process introduced in this paper can be surmised as follows:
+
+1 - The hologram is illuminated with the deformed object wave at $\lambda_1$. This generates a diffracted beam. After that the deformed object read by the beam $\lambda_2$ that generates another diffracted beam 
+2- These two beams interfere, creating an interferogram. The resulting interferogram is equivalent to that obtained using a longer, synthetic wavelength ($\Lambda$), which is calculated as $$\Lambda = \frac{\lambda_1\lambda_2}{|\lambda_1 - \lambda_2|}$$because this wavelength is way larger than the two-wavelengths used the interferogram will have larger fringes which increase the range, and solve the wrapping problem, but the measurement will be less sensitive than the indusial wavelength. 
+$$
+\begin{align*}
+A_H(\lambda_2) &= O'(\lambda_2) t_H \\
+&= 4 \exp[-j\pi(W'/\lambda_2)] \\
+&\quad + \exp[-j(W'/\lambda_2 + W/\lambda_1 - x \sin \theta_1/\lambda_1)] \\
+&\quad + \exp[-j\pi(W'/\lambda_2 - W/\lambda_1 + x \sin \theta_1/\lambda_1)] \\
+&\quad + \exp[-j\pi(W'/\lambda_2 + W/\lambda_2 - x \sin \theta_2/\lambda_2)] \\
+&\quad + \exp[-j\pi(W'/\lambda_2 - W/\lambda_2 + x \sin \theta_2/\lambda_2)].
+\end{align*}
+$$
+The following figure from \[Wyant (U. Arizona), 1970]  paper. We can see for the first figure (a) it show single wavelength with $\lambda = 514.5 nm$ interferogram the figure shows that the single wavelength has more fringes allows for better sensitivity. However there is more phase-wrapping and the range of the image is lower than the other three figures. 
+The other three figures (b-d) shows a TWH with increasing synthetic wavelength, as one can see that the higher the synthetic wavelength less wrapping effect but also less sensitivity for the small deformations. 
+![[Pasted image 20250423095928.png]]
   </script>
   </body>
 </html>
