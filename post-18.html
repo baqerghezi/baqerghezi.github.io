@@ -1,272 +1,118 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"><!-- #region <head> -->
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Your Blog Post Title – Mohammad Al Baqer Alghezi</title>
+  <meta name="description" content="Short description of this post.">
+  <link rel="canonical" href="https://your‑domain.com/post‑filename.html">
 
-    <title>Your Blog Post Title Here - Mohammad Al Baqer Alghezi</title>
-    <meta name="description" content="Detailed blog post about [Topic of this specific post].">
-    <meta name="keywords" content="optics, photonics, [specific keywords for post], Mohammad Al Baqer Alghezi">
-    <link rel="canonical" href="https://your-domain.com/post-your-filename.html"> <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "BlogPosting",
-      "headline": "Your Blog Post Title Here",         // <-- Match Title
-      "url": "https://your-domain.com/post-your-filename.html", // <-- Match Canonical URL
-      "datePublished": "2025-05-17",                  // <-- Set Publish Date (YYYY-MM-DD)
-      // "dateModified": "YYYY-MM-DD",                // Optional: Add if modified
-      "author": {
-        "@type": "Person",
-        "name": "Mohammad Al Baqer Alghezi"
-        // "url": "https://your-domain.com/index.html" // Optional: Link to author page
-      },
-      "publisher": {
-        "@type": "Person",
-        "name": "Mohammad Al Baqer Alghezi",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://your-domain.com/photos/personal_photo.png" // Optional: Update URL if needed
-        }
-      },
-      "description": "Detailed blog post about [Topic of this specific post].", // <-- Match Meta Description
-      "mainEntityOfPage": {
-        "@type": "WebPage",
-        "@id": "https://your-domain.com/post-your-filename.html" // <-- Match Canonical URL
-      }
-      // "image": "https://your-domain.com/path/to/featured-image.jpg" // Optional: Add a representative image URL
-    }
-    </script>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.tailwindcss.com" defer></script>
 
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
-    <style>
-        /* Apply Inter font globally */
-        body {
-            font-family: 'Inter', sans-serif;
-        }
-        /* Custom background color - slightly brighter paper */
-        .bg-old-paper {
-            background-color: #fffaf0; /* Floral White */
-        }
-        /* Custom text color for contrast */
-        .text-dark-ink {
-            color: #654321; /* Dark Brown */
-        }
-         /* Custom border color */
-        .border-soft-brown {
-             border-color: #d2b48c; /* Tan */
-        }
-        /* Custom accent color for links/buttons */
-        .text-accent {
-            color: #a0522d; /* Sienna */
-        }
-        .hover\:text-accent-dark:hover { /* Combined selector for specificity */
-             color: #8B4513; /* Saddle Brown */
-        }
-        .bg-accent {
-             background-color: #a0522d; /* Sienna */
-        }
-         .hover\:bg-accent-dark:hover { /* Combined selector for specificity */
-             background-color: #8B4513; /* Saddle Brown */
-        }
-        /* Style for icon links in the sidebar */
-        .sidebar-link {
-            display: flex;
-            align-items: center;
-            margin-bottom: 0.75rem;
-            text-decoration: none;
-            width: 100%;
-        }
-        /* Styling specific to blog post content */
-        /* These styles apply automatically to HTML tags inside the div#post-body-content */
-        .blog-post-content h2 {
-            font-size: 1.5rem; /* text-2xl */
-            font-weight: bold;
-            margin-top: 2rem; /* mt-8 */
-            margin-bottom: 0.75rem; /* mb-3 */
-            padding-bottom: 0.25rem; /* pb-1 */
-            border-bottom: 1px solid #d2b48c; /* Tan border */
-        }
-        .blog-post-content h3 {
-            font-size: 1.25rem; /* text-xl */
-            font-weight: bold;
-            margin-top: 1.75rem; /* mt-7 */
-            margin-bottom: 0.5rem; /* mb-2 */
-        }
-         .blog-post-content p {
-            margin-bottom: 1rem; /* mb-4 */
-        }
-         .blog-post-content ul,
-         .blog-post-content ol {
-             margin-left: 1.5rem; /* ml-6 */
-             margin-bottom: 1rem; /* mb-4 */
-             list-style-position: outside;
-         }
-         .blog-post-content ul { list-style-type: disc; }
-         .blog-post-content ol { list-style-type: decimal; }
-         .blog-post-content li { margin-bottom: 0.25rem; /* mb-1 */ }
+  <!-- Markdown parser & MathJax -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js" defer></script>
+  <script id="MathJax-script" async
+          src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head><!-- #endregion -->
 
-         .blog-post-content a {
-            color: #a0522d; /* Sienna */
-            text-decoration: underline;
-            transition: color 0.2s ease-in-out;
-         }
-         .blog-post-content a:hover {
-             color: #8B4513; /* Saddle Brown */
-         }
+<body class="bg-old-paper text-dark-ink leading-relaxed"><!-- #region layout -->
 
-         .blog-post-content blockquote {
-             border-left: 4px solid #d2b48c; /* Tan left border */
-             padding-left: 1rem; /* pl-4 */
-             margin-left: 0.5rem; /* ml-2 */
-             margin-bottom: 1rem; /* mb-4 */
-             font-style: italic;
-             color: #8B4513; /* Saddle Brown */
-         }
+  <!-- #region top‑nav -->
+  <nav class="top-nav sticky top-0 z-50">
+    <div class="container mx-auto max-w-6xl px-4 flex justify-between items-center">
+      <a href="index.html" class="logo-text text-dark-ink hover:text-accent transition-colors">M. A. Alghezi</a>
+      <div>
+        <a href="index.html" class="top-nav-link">Home</a>
+        <a href="blog.html" class="top-nav-link">Blog</a>
+      </div>
+    </div>
+  </nav>
+  <!-- #endregion top‑nav -->
 
-         .blog-post-content code:not(pre code) { /* Inline code */
-             background-color: rgba(210, 180, 140, 0.2); /* Light tan background */
-             padding: 0.1em 0.4em;
-             border-radius: 0.25rem; /* rounded-sm */
-             font-family: monospace;
-             font-size: 0.9em;
-             color: #654321; /* Dark Brown */
-         }
-         .blog-post-content pre { /* Code blocks */
-             background-color: #fdf5e6; /* Lighter paper for contrast */
-             border: 1px solid #d2b48c; /* Tan border */
-             padding: 1rem; /* p-4 */
-             margin-bottom: 1rem; /* mb-4 */
-             border-radius: 0.5rem; /* rounded-lg */
-             overflow-x: auto; /* Allow horizontal scroll for long code */
-             font-family: monospace;
-             font-size: 0.9em;
-             line-height: 1.4;
-             color: #654321; /* Dark Brown */
-         }
-         .blog-post-content pre code {
-             background-color: transparent;
-             padding: 0;
-             border-radius: 0;
-             font-size: 1em; /* Inherit font size from pre */
-             color: inherit; /* Inherit color */
-         }
-         .blog-post-content img {
-             max-width: 100%;
-             height: auto;
-             margin-top: 1rem;
-             margin-bottom: 1rem;
-             border-radius: 0.5rem; /* rounded-lg */
-             border: 1px solid #d2b48c; /* Optional border */
-         }
-        /* Top Navigation Styles */
-        .top-nav {
-            background-color: rgba(255, 250, 240, 0.8);
-            backdrop-filter: blur(5px);
-            border-bottom: 1px solid #d2b48c;
-        }
-        .top-nav-link {
-             padding: 0.75rem 1rem;
-             font-weight: 700;
-             font-size: 0.9rem;
-             text-transform: uppercase;
-             letter-spacing: 0.05em;
-             transition: color 0.2s ease-in-out;
-             color: #a0522d;
-        }
-         .top-nav-link:hover {
-             color: #8B4513;
-         }
-         /* Logo Style */
-         .logo-text {
-             font-weight: 900;
-             font-size: 1.25rem;
-             letter-spacing: -0.025em;
-         }
+  <div class="container mx-auto max-w-6xl px-4 pt-8 md:pt-12">
+    <div class="md:flex md:space-x-6">
 
-    </style>
-</head>
-<body class="bg-old-paper text-dark-ink leading-relaxed">
-
-    <nav class="top-nav sticky top-0 z-50">
-        <div class="container mx-auto max-w-6xl px-4 flex justify-between items-center">
-            <a href="index.html" class="logo-text text-dark-ink hover:text-accent transition-colors">
-                M. A. Alghezi
-            </a>
-            <div>
-                <a href="index.html" class="top-nav-link">Home</a>
-                <a href="blog.html" class="top-nav-link">Blog</a>
-            </div>
+      <!-- #region sidebar -->
+      <aside class="md:w-[18%] mb-12 md:mb-0 md:sticky md:top-20 md:self-start">
+        <div class="text-center md:text-left mb-8">
+          <img src="photos/personal_photo.png" alt="Portrait of Mohammad Al Baqer Alghezi"
+               class="w-28 h-28 md:w-28 md:h-28 rounded-full mx-auto md:mx-0 mb-6 border-4 border-soft-brown shadow-md object-cover"
+               loading="lazy" width="112" height="112">
+          <h1 class="text-xl lg:text-2xl font-bold mb-1">Mohammad Al Baqer Alghezi</h1>
+          <p class="text-sm md:text-base text-dark-ink/80">Optical Engineering PhD Student</p>
         </div>
-    </nav>
+        <nav class="border-t border-soft-brown pt-6">
+          <h3 class="text-md font-bold mb-4 text-center md:text-left">Connect</h3>
+          <a href="mailto:alghezim1@udayton.edu"
+             class="block w-full text-center bg-accent text-white font-bold py-2 px-3 rounded-lg transition hover:bg-accent-dark mb-4 text-xs md:text-sm">
+            Email Me
+          </a>
+          <div class="flex flex-col items-center md:items-start">
+            <a href="https://github.com/baqerghezi" target="_blank" rel="noopener noreferrer"
+               class="sidebar-link text-accent hover:text-accent-dark font-medium hover:underline">
+              <img src="photos/github.png" alt="" class="w-4 h-4 mr-2 flex-shrink-0">
+              <span class="text-xs md:text-sm">GitHub</span>
+            </a>
+            <a href="https://www.linkedin.com/in/baqerghezi/" target="_blank" rel="noopener noreferrer"
+               class="sidebar-link text-accent hover:text-accent-dark font-medium hover:underline">
+              <img src="photos/Linkedin.png" alt="" class="w-4 h-4 mr-2 flex-shrink-0">
+              <span class="text-xs md:text-sm">LinkedIn</span>
+            </a>
+            <a href="https://scholar.google.com/citations?user=hr7rSO4AAAAJ" target="_blank" rel="noopener noreferrer"
+               class="sidebar-link text-accent hover:text-accent-dark font-medium hover:underline">
+              <img src="photos/googlescholar.png" alt="" class="w-4 h-4 mr-2 flex-shrink-0">
+              <span class="text-xs md:text-sm">Google Scholar</span>
+            </a>
+            <a href="https://www.instagram.com/ghezibaqer/" target="_blank" rel="noopener noreferrer"
+               class="sidebar-link text-accent hover:text-accent-dark font-medium hover:underline">
+              <img src="photos/instgram.png" alt="" class="w-4 h-4 mr-2 flex-shrink-0">
+              <span class="text-xs md:text-sm">Instagram</span>
+            </a>
+          </div>
+        </nav>
+      </aside>
+      <!-- #endregion sidebar -->
 
-    <div class="container mx-auto max-w-6xl px-4 pt-8 md:pt-12">
-        <div class="md:flex md:space-x-6">
+      <!-- #region post‑body -->
+      <main class="md:w-[82%]">
+        <article class="prose lg:prose-lg max-w-none mx-auto" id="post-container"></article>
 
-            <aside class="md:w-[18%] mb-12 md:mb-0 md:sticky md:top-20 md:self-start">
-                <div class="text-center md:text-left mb-8">
-                    <img src="photos/personal_photo.png"
-                         alt="Headshot photo of Mohammad Al Baqer Alghezi"
-                         class="w-28 h-28 md:w-28 md:h-28 rounded-full mx-auto md:mx-0 mb-6 border-4 border-soft-brown shadow-md object-cover"
-                         onerror="this.onerror=null; this.src='https://placehold.co/112x112/d2b48c/654321?text=Photo+Not+Found'; this.alt='Error loading profile photo';">
-                    <h1 class="text-xl lg:text-2xl font-bold mb-1">Mohammad Al Baqer Alghezi</h1>
-                    <p class="text-sm md:text-base text-dark-ink/80">Optical Engineering PhD Student</p>
-                </div>
-                <nav class="border-t border-soft-brown pt-6">
-                    <h3 class="text-md font-bold mb-4 text-center md:text-left">Connect</h3>
-                    <a href="mailto:alghezim1@udayton.edu" class="block w-full text-center bg-accent text-white font-bold py-2 px-3 rounded-lg transition hover:bg-accent-dark mb-4 text-xs md:text-sm">
-                        Email Me
-                    </a>
-                    <div class="flex flex-col items-center md:items-start">
-                        <a href="https://github.com/baqerghezi" class="sidebar-link text-accent hover:text-accent-dark font-medium hover:underline" target="_blank" rel="noopener noreferrer">
-                            <img src="photos/github.png" alt="GitHub profile of Mohammad Al Baqer Alghezi" class="w-4 h-4 mr-2 flex-shrink-0" onerror="this.style.display='none'">
-                            <span class="text-xs md:text-sm">GitHub</span>
-                        </a>
-                        <a href="https://www.linkedin.com/in/baqerghezi/" class="sidebar-link text-accent hover:text-accent-dark font-medium hover:underline" target="_blank" rel="noopener noreferrer">
-                            <img src="photos/Linkedin.png" alt="LinkedIn profile of Mohammad Al Baqer Alghezi" class="w-4 h-4 mr-2 flex-shrink-0" onerror="this.style.display='none'">
-                            <span class="text-xs md:text-sm">LinkedIn</span>
-                        </a>
-                        <a href="#" class="sidebar-link text-accent hover:text-accent-dark font-medium hover:underline" target="_blank" rel="noopener noreferrer">
-                            <img src="photos/googlescholar.png" alt="Google Scholar profile of Mohammad Al Baqer Alghezi" class="w-4 h-4 mr-2 flex-shrink-0" onerror="this.style.display='none'">
-                            <span class="text-xs md:text-sm">Google Scholar</span>
-                        </a>
-                        <a href="https://www.instagram.com/ghezibaqer/" class="sidebar-link text-accent hover:text-accent-dark font-medium hover:underline" target="_blank" rel="noopener noreferrer">
-                            <img src="photos/instgram.png" alt="Instagram profile of Mohammad Al Baqer Alghezi" class="w-4 h-4 mr-2 flex-shrink-0" onerror="this.style.display='none'">
-                            <span class="text-xs md:text-sm">Instagram</span>
-                        </a>
-                    </div>
-                </nav>
-            </aside>
+        <div class="mt-12 pt-6 border-t border-soft-brown">
+          <a href="blog.html" class="text-accent hover:text-accent-dark font-medium hover:underline">&larr; Back to Blog List</a>
+        </div>
 
-            <main class="md:w-[82%]">
-                <article class="mb-12 md:mb-16">
+        <footer class="text-center mt-16 pt-8 border-t border-soft-brown">
+          <p class="text-sm text-dark-ink/70">&copy; 2025 Mohammad Al Baqer Alghezi. All rights reserved.</p>
+        </footer>
+      </main>
+      <!-- #endregion post‑body -->
 
-                    <h1 class="text-3xl md:text-4xl font-bold mb-4">Your Blog Post Title Here</h1>
+    </div>
+  </div>
+  <!-- #endregion layout -->
 
-                    <p class="text-sm text-dark-ink/80 mb-6">Published on <time datetime="YYYY-MM-DD">Month Day, Year</time></p>
+  <!-- #region scripts -->
+  <script defer>
+    document.addEventListener('DOMContentLoaded', () => {
+      const md = document.getElementById('post-markdown').textContent.trim();
+      document.getElementById('post-container').innerHTML = marked.parse(md);
+      if (window.MathJax?.typesetPromise) MathJax.typesetPromise();
+    });
+  </script>
+  <!-- #endregion scripts -->
 
-                    <div id="post-body-content" class="blog-post-content space-y-4">
+  <!-- #region MARKDOWN CONTENT (edit here) -->
+  <script id="post-markdown" type="text/markdown">
+# The Quadratic Equation
+$$
+x^2 + bx + c = 0
+$$
+$$
+x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
+$$
+  </script>
+  <!-- #endregion MARKDOWN CONTENT -->
 
-                        <p>This is where your first paragraph goes.</p>
-
-                        <h2>This is a Section Heading (H2)</h2>
-
-                        <p>More text content here. Add images, lists, code blocks as needed.</p>
-                        $$a = \frac{1}{2}$$
-                        
-
-                        </div>
-                    <div class="mt-12 pt-6 border-t border-soft-brown">
-                        <a href="blog.html" class="text-accent hover:text-accent-dark font-medium hover:underline">&larr; Back to Blog List</a>
-                    </div>
-                </article>
-
-                <footer class="text-center mt-16 pt-8 border-t border-soft-brown">
-                    <p class="text-sm text-dark-ink/70">&copy; 2025 Mohammad Al Baqer Alghezi. All rights reserved.</p>
-                </footer>
-            </main>
-
-        </div> </div> </body>
+</body>
 </html>
