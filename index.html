@@ -5,8 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mohammad Al Baqer Alghezi - Portfolio</title>
     <meta name="description" content="Personal portfolio of Mohammad Al Baqer Alghezi, an Optical Engineering PhD student based in Dayton, Ohio, showcasing projects, publications, and blog posts on optics and photonics.">
-    <meta name="keywords" content="Mohammad Al Baqer Alghezi, portfolio, optical engineering, photonics, PhD student, research, data analysis, University of Dayton, electro-optics">
-    <link rel="canonical" href="https://your-domain.com/index.html"> <script src="https://cdn.tailwindcss.com"></script>
+    <meta name="keywords" content="Mohammad Al Baqer Alghezi, portfolio, optical engineering, photonics, PhD student, research, data analysis, University of Dayton, electro-optics, CV, resume">
+    <link rel="canonical" href="https://baqerghezi.github.io/index.html">
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
@@ -42,11 +43,10 @@
             background-color: var(--bg-primary);
             color: var(--text-primary);
             font-family: 'Inter', sans-serif;
-            line-height: 1.7; /* Increased for better readability */
+            line-height: 1.7;
             transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
         }
 
-        /* Styling for cards (projects, publications) */
         .content-card {
             background-color: var(--bg-secondary);
             border: 1px solid var(--border-primary);
@@ -57,7 +57,7 @@
              box-shadow: 0 10px 15px -3px var(--shadow-color), 0 4px 6px -4px var(--shadow-color);
         }
 
-        .top-nav {
+        .top-nav-container { /* Renamed from .top-nav to avoid conflict if you had specific styles for the nav tag itself */
             background-color: var(--nav-bg);
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
@@ -71,9 +71,9 @@
             --sidebar-icon-filter: brightness(0) invert(1);
         }
         .sidebar-link img {
-            width: 1rem; /* 16px */
-            height: 1rem; /* 16px */
-            margin-right: 0.5rem; /* 8px */
+            width: 1rem;
+            height: 1rem;
+            margin-right: 0.5rem;
             flex-shrink: 0;
         }
         .dark .sidebar-link img.filter-on-dark {
@@ -82,9 +82,9 @@
         .publication-entry {
             background-color: var(--bg-secondary);
             border: 1px solid var(--border-primary);
-            padding: 1.5rem; /* Equivalent to p-6 */
-            border-radius: 0.75rem; /* Equivalent to rounded-xl */
-            margin-bottom: 1.5rem; /* Space between entries */
+            padding: 1.5rem;
+            border-radius: 0.75rem;
+            margin-bottom: 1.5rem;
             box-shadow: 0 4px 6px -1px var(--shadow-color), 0 2px 4px -2px var(--shadow-color);
             transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
         }
@@ -92,78 +92,28 @@
              box-shadow: 0 10px 15px -3px var(--shadow-color), 0 4px 6px -4px var(--shadow-color);
         }
         .publication-title {
-            font-size: 1.125rem; /* text-lg */
-            font-weight: 700; /* font-bold */
+            font-size: 1.125rem;
+            font-weight: 700;
             color: var(--text-primary);
-            margin-bottom: 0.25rem; /* mb-1 */
+            margin-bottom: 0.25rem;
         }
         .publication-authors, .publication-venue {
-            font-size: 0.875rem; /* text-sm */
+            font-size: 0.875rem;
             color: var(--text-secondary);
-            margin-bottom: 0.5rem; /* mb-2 */
+            margin-bottom: 0.5rem;
         }
-
     </style>
 </head>
 <body class="font-inter leading-relaxed">
 
-    <nav class="top-nav sticky top-0 z-50">
-        <div class="container mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16">
-            <a href="index.html" class="text-2xl font-bold text-[var(--text-primary)] hover:text-[var(--accent-primary)] transition-colors">
-                M. A. Alghezi
-            </a>
-            <div class="flex items-center space-x-4">
-                <a href="index.html" class="px-3 py-2 rounded-md text-sm font-medium text-[var(--text-primary)] hover:text-[var(--accent-primary)] hover:bg-[var(--border-primary)]/20 transition-colors ring-2 ring-[var(--accent-primary)]">Home</a>
-                <a href="blog.html" class="px-3 py-2 rounded-md text-sm font-medium text-[var(--text-primary)] hover:text-[var(--accent-primary)] hover:bg-[var(--border-primary)]/20 transition-colors">Blog</a>
-                <button id="theme-toggle" type="button" class="p-2 rounded-lg text-[var(--text-primary)] hover:bg-[var(--border-primary)]/30 focus:outline-none focus:ring-2 focus:ring-[var(--accent-primary)] transition-colors">
-                    <svg id="theme-toggle-dark-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 hidden"><path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21c3.978 0 7.44-2.03 9.002-5.002Z" /></svg>
-                    <svg id="theme-toggle-light-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 hidden"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-6.364-.386 1.591-1.591M3 12h2.25m.386-6.364 1.591 1.591" /></svg>
-                    <span class="sr-only">Toggle theme</span>
-                </button>
-            </div>
+    <div id="navigation-container" class="sticky top-0 z-50 top-nav-container">
         </div>
-    </nav>
 
     <div class="container mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 pt-8 md:pt-12 pb-16">
         <div class="md:flex md:space-x-8">
 
-            <aside class="md:w-[25%] lg:w-[22%] mb-12 md:mb-0 md:sticky md:top-24 md:self-start">
-                <div class="p-6 rounded-xl border border-[var(--border-primary)] bg-[var(--bg-secondary)] shadow-lg">
-                    <div class="text-center md:text-left mb-6">
-                        <img src="photos/personal_photo.png"
-                             alt="Headshot photo of Mohammad Al Baqer Alghezi"
-                             class="w-28 h-28 rounded-full mx-auto md:mx-0 mb-4 border-4 border-[var(--accent-primary)] shadow-md object-cover"
-                             onerror="this.onerror=null; this.src='https://placehold.co/112x112/A08C7D/4A3B31?text=M.A.A'; this.alt='Error loading profile photo';">
-                        <h1 class="text-xl lg:text-2xl font-bold mb-1 text-[var(--text-primary)]">Mohammad Al Baqer Alghezi</h1>
-                        <p class="text-sm md:text-base text-[var(--text-secondary)]">Optical Engineering PhD Student</p>
-                    </div>
-
-                    <nav class="border-t border-[var(--border-primary)] pt-6">
-                        <h3 class="text-md font-bold mb-4 text-center md:text-left text-[var(--text-primary)]">Connect</h3>
-                        <a href="mailto:alghezim1@udayton.edu" class="block w-full text-center bg-[var(--accent-primary)] text-white font-bold py-2.5 px-3 rounded-lg transition hover:bg-[var(--accent-primary-hover)] mb-4 text-xs md:text-sm shadow hover:shadow-md">
-                            Email Me
-                        </a>
-                        <div class="space-y-2">
-                            <a href="https://github.com/baqerghezi" class="sidebar-link flex items-center text-[var(--accent-primary)] hover:text-[var(--accent-primary-hover)] font-medium hover:underline" target="_blank" rel="noopener noreferrer">
-                                <img src="photos/github.png" alt="GitHub logo icon linking to baqerghezi profile" class="filter-on-dark" onerror="this.style.display='none'">
-                                <span class="text-xs md:text-sm">GitHub</span>
-                            </a>
-                            <a href="https://www.linkedin.com/in/baqerghezi/" class="sidebar-link flex items-center text-[var(--accent-primary)] hover:text-[var(--accent-primary-hover)] font-medium hover:underline" target="_blank" rel="noopener noreferrer">
-                                <img src="photos/Linkedin.png" alt="LinkedIn logo icon linking to baqerghezi profile" class="filter-on-dark" onerror="this.style.display='none'">
-                                <span class="text-xs md:text-sm">LinkedIn</span>
-                            </a>
-                            <a href="https://scholar.google.com/citations?user=hr7rSO4AAAAJ&hl=en&authuser=1" class="sidebar-link flex items-center text-[var(--accent-primary)] hover:text-[var(--accent-primary-hover)] font-medium hover:underline" target="_blank" rel="noopener noreferrer">
-                                <img src="photos/googlescholar.png" alt="Google Scholar logo icon" class="filter-on-dark" onerror="this.style.display='none'">
-                                <span class="text-xs md:text-sm">Google Scholar</span>
-                            </a>
-                            <a href="https://www.instagram.com/ghezibaqer/" class="sidebar-link flex items-center text-[var(--accent-primary)] hover:text-[var(--accent-primary-hover)] font-medium hover:underline" target="_blank" rel="noopener noreferrer">
-                                <img src="photos/instgram.png" alt="Instagram logo icon linking to ghezibaqer profile" class="filter-on-dark" onerror="this.style.display='none'">
-                                <span class="text-xs md:text-sm">Instagram</span>
-                            </a>
-                        </div>
-                    </nav>
+            <div id="sidebar-container" class="md:w-[25%] lg:w-[22%] mb-12 md:mb-0 md:sticky md:top-24 md:self-start">
                 </div>
-            </aside>
 
             <main class="md:w-[75%] lg:w-[78%]">
                 <section id="about" class="mb-12 md:mb-16 p-6 rounded-xl border border-[var(--border-primary)] bg-[var(--bg-secondary)] shadow-lg">
@@ -198,7 +148,8 @@
                             </p>
                              <a href="post-project-2.html" class="inline-block text-[var(--accent-primary)] hover:text-[var(--accent-primary-hover)] font-semibold hover:underline text-sm transition-colors duration-200">View Details &rarr;</a>
                         </div>
-                        <div class="content-card p-6 rounded-xl sm:col-span-2 md:col-span-1"> <h3 class="text-xl font-bold mb-2 text-[var(--text-primary)]">Project Title 3</h3>
+                         <div class="content-card p-6 rounded-xl sm:col-span-2 md:col-span-1">
+                            <h3 class="text-xl font-bold mb-2 text-[var(--text-primary)]">Project Title 3</h3>
                             <p class="text-[var(--text-secondary)] mb-3 text-sm">
                                 Description for a third project if you have one. This card can span full width on small screens.
                             </p>
@@ -240,40 +191,128 @@
     </div>
 
     <script>
-        // --- Theme Toggle Functionality ---
-        const themeToggleBtn = document.getElementById('theme-toggle');
-        const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
-        const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+        // --- Function to Render Navigation ---
+        function renderNavigation(currentPage) {
+            const navContainer = document.getElementById('navigation-container');
+            if (!navContainer) return;
 
-        // Function to apply theme and update icon
+            // Define active classes for the current page link
+            const activeClasses = "ring-2 ring-[var(--accent-primary)]"; // Active link indicator
+            const inactiveClasses = "hover:text-[var(--accent-primary)] hover:bg-[var(--border-primary)]/20";
+
+            // HTML for the navigation bar
+            // Note: URLs are absolute based on your GitHub Pages structure
+            const navHTML = `
+                <div class="container mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16">
+                    <a href="https://baqerghezi.github.io/index.html" class="text-2xl font-bold text-[var(--text-primary)] hover:text-[var(--accent-primary)] transition-colors">
+                        M. A. Alghezi
+                    </a>
+                    <div class="flex items-center space-x-2 sm:space-x-4">
+                        <a href="https://baqerghezi.github.io/index.html" class="px-3 py-2 rounded-md text-sm font-medium text-[var(--text-primary)] transition-colors ${currentPage === 'home' ? activeClasses : inactiveClasses}">Home</a>
+                        <a href="https://baqerghezi.github.io/blog.html" class="px-3 py-2 rounded-md text-sm font-medium text-[var(--text-primary)] transition-colors ${currentPage === 'blog' ? activeClasses : inactiveClasses}">Blog</a>
+                        <a href="https://baqerghezi.github.io/mohammadcv.html" target="_blank" rel="noopener noreferrer" class="px-3 py-2 rounded-md text-sm font-medium text-[var(--text-primary)] transition-colors ${currentPage === 'cv' ? activeClasses : inactiveClasses}">CV</a>
+                        <button id="theme-toggle" type="button" class="p-2 rounded-lg text-[var(--text-primary)] hover:bg-[var(--border-primary)]/30 focus:outline-none focus:ring-2 focus:ring-[var(--accent-primary)] transition-colors">
+                            <svg id="theme-toggle-dark-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 hidden"><path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21c3.978 0 7.44-2.03 9.002-5.002Z" /></svg>
+                            <svg id="theme-toggle-light-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 hidden"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-6.364-.386 1.591-1.591M3 12h2.25m.386-6.364 1.591 1.591" /></svg>
+                            <span class="sr-only">Toggle theme</span>
+                        </button>
+                    </div>
+                </div>
+            `;
+            navContainer.innerHTML = navHTML;
+
+            // Re-attach event listener for the theme toggle button as it's now part of dynamic HTML
+            const themeToggleBtn = document.getElementById('theme-toggle');
+            if (themeToggleBtn) {
+                 themeToggleBtn.addEventListener('click', () => {
+                    const isCurrentlyDark = document.documentElement.classList.contains('dark');
+                    applyTheme(!isCurrentlyDark); // applyTheme function needs to be accessible
+                });
+            }
+        }
+
+        // --- Function to Render Sidebar ---
+        function renderSidebar() {
+            const sidebarContainer = document.getElementById('sidebar-container');
+            if (!sidebarContainer) return;
+
+            // HTML for the sidebar
+            const sidebarHTML = `
+                <div class="p-6 rounded-xl border border-[var(--border-primary)] bg-[var(--bg-secondary)] shadow-lg">
+                    <div class="text-center md:text-left mb-6">
+                        <img src="photos/personal_photo.png"
+                             alt="Headshot photo of Mohammad Al Baqer Alghezi"
+                             class="w-28 h-28 rounded-full mx-auto md:mx-0 mb-4 border-4 border-[var(--accent-primary)] shadow-md object-cover"
+                             onerror="this.onerror=null; this.src='https://placehold.co/112x112/A08C7D/4A3B31?text=M.A.A'; this.alt='Error loading profile photo';">
+                        <h1 class="text-xl lg:text-2xl font-bold mb-1 text-[var(--text-primary)]">Mohammad Al Baqer Alghezi</h1>
+                        <p class="text-sm md:text-base text-[var(--text-secondary)]">Optical Engineering PhD Student</p>
+                    </div>
+                    <nav class="border-t border-[var(--border-primary)] pt-6">
+                        <h3 class="text-md font-bold mb-4 text-center md:text-left text-[var(--text-primary)]">Connect</h3>
+                        <a href="mailto:alghezim1@udayton.edu" class="block w-full text-center bg-[var(--accent-primary)] text-white font-bold py-2.5 px-3 rounded-lg transition hover:bg-[var(--accent-primary-hover)] mb-4 text-xs md:text-sm shadow hover:shadow-md">
+                            Email Me
+                        </a>
+                        <div class="space-y-2">
+                            <a href="https://github.com/baqerghezi" class="sidebar-link flex items-center text-[var(--accent-primary)] hover:text-[var(--accent-primary-hover)] font-medium hover:underline" target="_blank" rel="noopener noreferrer">
+                                <img src="photos/github.png" alt="GitHub logo icon linking to baqerghezi profile" class="filter-on-dark" onerror="this.style.display='none'">
+                                <span class="text-xs md:text-sm">GitHub</span>
+                            </a>
+                            <a href="https://www.linkedin.com/in/baqerghezi/" class="sidebar-link flex items-center text-[var(--accent-primary)] hover:text-[var(--accent-primary-hover)] font-medium hover:underline" target="_blank" rel="noopener noreferrer">
+                                <img src="photos/Linkedin.png" alt="LinkedIn logo icon linking to baqerghezi profile" class="filter-on-dark" onerror="this.style.display='none'">
+                                <span class="text-xs md:text-sm">LinkedIn</span>
+                            </a>
+                            <a href="https://scholar.google.com/citations?user=hr7rSO4AAAAJ&hl=en&authuser=1" class="sidebar-link flex items-center text-[var(--accent-primary)] hover:text-[var(--accent-primary-hover)] font-medium hover:underline" target="_blank" rel="noopener noreferrer">
+                                <img src="photos/googlescholar.png" alt="Google Scholar logo icon" class="filter-on-dark" onerror="this.style.display='none'">
+                                <span class="text-xs md:text-sm">Google Scholar</span>
+                            </a>
+                            <a href="https://www.instagram.com/ghezibaqer/" class="sidebar-link flex items-center text-[var(--accent-primary)] hover:text-[var(--accent-primary-hover)] font-medium hover:underline" target="_blank" rel="noopener noreferrer">
+                                <img src="photos/instgram.png" alt="Instagram logo icon linking to ghezibaqer profile" class="filter-on-dark" onerror="this.style.display='none'">
+                                <span class="text-xs md:text-sm">Instagram</span>
+                            </a>
+                        </div>
+                    </nav>
+                </div>
+            `;
+            sidebarContainer.innerHTML = sidebarHTML;
+        }
+
+        // --- Theme Toggle Functionality (Global Scope for applyTheme) ---
+        // This function needs to be accessible by the dynamically added theme toggle button
         function applyTheme(isDark) {
+            const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon'); // Get icons within this scope or ensure they exist
+            const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+
             if (isDark) {
                 document.documentElement.classList.add('dark');
-                themeToggleDarkIcon.classList.remove('hidden');
-                themeToggleLightIcon.classList.add('hidden');
+                if (themeToggleDarkIcon) themeToggleDarkIcon.classList.remove('hidden');
+                if (themeToggleLightIcon) themeToggleLightIcon.classList.add('hidden');
                 localStorage.setItem('color-theme', 'dark');
             } else {
                 document.documentElement.classList.remove('dark');
-                themeToggleDarkIcon.classList.add('hidden');
-                themeToggleLightIcon.classList.remove('hidden');
+                if (themeToggleDarkIcon) themeToggleDarkIcon.classList.add('hidden');
+                if (themeToggleLightIcon) themeToggleLightIcon.classList.remove('hidden');
                 localStorage.setItem('color-theme', 'light');
             }
         }
 
-        // Check initial theme
-        const preferredTheme = localStorage.getItem('color-theme');
-        const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
-        if (preferredTheme === 'dark' || (!preferredTheme && systemPrefersDark)) {
-            applyTheme(true);
-        } else {
-            applyTheme(false);
-        }
+        // --- Initial Load ---
+        document.addEventListener('DOMContentLoaded', () => {
+            // Render common elements
+            renderNavigation('home'); // 'home' because this is the portfolio/index page
+            renderSidebar();
 
-        // Listener for theme toggle button
-        themeToggleBtn.addEventListener('click', () => {
-            const isCurrentlyDark = document.documentElement.classList.contains('dark');
-            applyTheme(!isCurrentlyDark);
+            // Initialize theme (after navigation and its theme toggle button are rendered)
+            const preferredTheme = localStorage.getItem('color-theme');
+            const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+            if (preferredTheme === 'dark' || (!preferredTheme && systemPrefersDark)) {
+                applyTheme(true);
+            } else {
+                applyTheme(false);
+            }
+            // The theme toggle event listener is now added within renderNavigation
+            // to ensure it's attached after the button is added to the DOM.
         });
     </script>
 
